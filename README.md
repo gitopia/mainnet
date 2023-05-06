@@ -9,7 +9,7 @@ The steps to create a validator in the genesis event of Gitopia are as follows:
 
 1. Install gitopiad
 
-The first step is to install the Gitopia binary, `gitopiad`. Follow the instructions in the [gitopiad installation guide](https://docs.gitopia.com/installation/index.html) to install `gitopiad` in your system.
+The first step is to install the Gitopia binary, `gitopiad`. Get the latest release or build the binary yourselves using the source code [here](https://github.com/gitopia/gitopia) to install `gitopiad` in your system.
 
 2. Fork this repo and clone
 
