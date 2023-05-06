@@ -3,6 +3,8 @@
 This repo contains instructions for genesis validators to create genesis
 staking transactions (gentxs) to start the Gitopia mainnet.
 
+![](genesis_ceremony_cover.png)
+
 ## Instructions
 
 The steps to create a validator in the genesis event of Gitopia are as follows:
