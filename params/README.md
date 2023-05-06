@@ -8,7 +8,7 @@
 | unbonding_time | 1814400s (21 days) | Duration time for unbonding |
 | max_validators | 100 | Maximum number of active validators set |
 | max_entries | 7 | Maximum amount of delegations by one account |
-| bonded_coin_denom | lore | The bonded coin denom |
+| bonded_coin_denom | ulore | The bonded coin denom |
 | max_evidence_age | 1814400s (21 days) | Time period indicator that a validator committed malicious behavior |
 | historical_entries | 10000 |
 | *Slashing module* |
@@ -23,7 +23,7 @@
 | inflation_min | 0.25 | The minimum annual inflation rate |
 | inflation_rate_change | 0.20 | The rate at which the inflation rate changes |
 | goal_bonded | 0.67 | A point of inflation change sign |
-| blocks_per_year | 6311520 |
+| blocks_per_year | 19466666 |
 | *Distribution Module* |
 | community_tax | 0.05 | The tax on inflation to the community pool |
 | base_proposer_reward  | 0.01 | % of inflation allocated to block proposer |

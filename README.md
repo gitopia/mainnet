@@ -97,6 +97,8 @@ After creating your gentx transaction, you need to commit and push it to your fo
 
 The final step in the genesis event of Gitopia is to create a pull request (PR) to submit your gentx transaction to the Gitopia genesis repository. In the PR description, provide details about your validator and your gentx transaction. Once your PR is merged, your gentx transaction will be included in the Gitopia genesis file, and you will become a validator on the Gitopia network at genesis.
 
+Note that we'll accept PRs only from the known validators to ensure that 2/3 of the voting power is online at the time of genesis. Others are free to join as a validator once the chain is live.
+
 ## A Note about your Validator Signing Key
 Your validator signing private key lives at ~/.gitopiad/config/priv_validator_key.json. If this key is stolen, an attacker would be able to make your validator double sign, causing a slash of 5% of your LORE tokens and the tombstoning of your validator.
 
