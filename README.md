@@ -37,14 +37,13 @@ gitopiad validate-genesis
 Once you have verified the genesis file, you need to create a gentx transaction. A gentx transaction is a special type of transaction that allows you to become a validator on the Gitopia network. To create a gentx transaction, run the following command:
 
 ```bash
-gitopiad gentx \
-  --amount <amount_of_delegation_uatom> \
+gitopiad gentx [key_name] [amount] \
   --commission-rate <commission_rate> \
   --commission-max-rate <commission_max_rate> \
   --commission-max-change-rate <commission_max_change_rate> \
-  --pubkey <consensus_pubkey> \
-  --name <key_name>
-
+  --moniker <moniker> \
+  --website <website> \
+  --pubkey <consensus_pubkey>
 ```
 
 This will produce a file in the `~/.gitopiad/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
