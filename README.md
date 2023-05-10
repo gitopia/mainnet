@@ -17,7 +17,15 @@ The first step is to install the Gitopia binary, `gitopiad`. Get the latest rele
 
 Once you have installed the Gitopia binary, you need to fork this repository and clone it to your local machine. The Gitopia genesis repository contains the initial configuration and parameters for the Gitopia blockchain.
 
-3. Verify genesis file and create gentx transaction
+3. Extract the pre-genesis.json and verify the sha256 checksum (use shasum -a 256 or sha256sum)
+
+```bash
+❯ tar -xzf pre-genesis.tar.gz
+❯ shasum -a 256 pre-genesis.json
+af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398  pre-genesis.json
+```
+
+4. Validate genesis file and create gentx transaction
 
 Copy the `pre-genesis.json` to gitopia home directory and verify the correctness of the configuration by running the following command:
 
@@ -89,11 +97,11 @@ This will produce a file in the `~/.gitopiad/config/gentx/` folder that has a na
 }
 ```
 
-4. Commit and push gentx transaction in the forked repo
+5. Commit and push gentx transaction in the forked repo
 
 After creating your gentx transaction, you need to commit and push it to your forked Gitopia repository.
 
-5. Create a pull request (PR)
+6. Create a pull request (PR)
 
 The final step in the genesis event of Gitopia is to create a pull request (PR) to submit your gentx transaction to the Gitopia genesis repository. In the PR description, provide details about your validator and your gentx transaction. Once your PR is merged, your gentx transaction will be included in the Gitopia genesis file, and you will become a validator on the Gitopia network at genesis.
 
