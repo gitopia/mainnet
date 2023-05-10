@@ -30,7 +30,7 @@ af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398  pre-genesis.js
 Copy the `pre-genesis.json` to gitopia home directory and verify the correctness of the configuration by running the following command:
 
 ```bash
-cp pre-genesis.json ~/.gitopiad/config/genesis.json
+cp pre-genesis.json ~/.gitopia/config/genesis.json
 gitopiad validate-genesis
 ```
 
@@ -44,6 +44,7 @@ gitopiad gentx [key_name] [amount] \
   --moniker <moniker> \
   --website <website> \
   --pubkey <consensus_pubkey>
+  --chain-id gitopia
 ```
 
 This will produce a file in the `~/.gitopiad/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
