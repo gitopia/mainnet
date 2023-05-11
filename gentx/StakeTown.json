@@ -5,7 +5,7 @@
             "@type":"/cosmos.staking.v1beta1.MsgCreateValidator",
             "description":{
                "moniker":"StakeTown",
-               "identity":"",
+               "identity":"FE38D8D1E0E5011F",
                "website":"",
                "security_contact":"",
                "details":""
