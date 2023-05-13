@@ -22,7 +22,7 @@ Once you have installed the Gitopia binary, you need to fork this repository and
 ```bash
 ❯ tar -xzf pre-genesis.tar.gz
 ❯ shasum -a 256 pre-genesis.json
-af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398  pre-genesis.json
+9c44bd20094aa530edb19658efe019c29c7de175e59cf2a4b7ecc9e78e042963  pre-genesis.json
 ```
 
 4. Validate genesis file and create gentx transaction
@@ -43,11 +43,11 @@ gitopiad gentx [key_name] [amount] \
   --commission-max-change-rate <commission_max_change_rate> \
   --moniker <moniker> \
   --website <website> \
-  --pubkey <consensus_pubkey>
+  --pubkey <consensus_pubkey> \
   --chain-id gitopia
 ```
 
-This will produce a file in the `~/.gitopiad/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
+This will produce a file in the `~/.gitopia/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
 
 ```bash
 {
@@ -108,7 +108,7 @@ The final step in the genesis event of Gitopia is to create a pull request (PR) 
 Note that we'll accept PRs only from the known validators to ensure that 2/3 of the voting power is online at the time of genesis. Others are free to join as a validator once the chain is live.
 
 ## A Note about your Validator Signing Key
-Your validator signing private key lives at ~/.gitopiad/config/priv_validator_key.json. If this key is stolen, an attacker would be able to make your validator double sign, causing a slash of 5% of your LORE tokens and the tombstoning of your validator.
+Your validator signing private key lives at ~/.gitopia/config/priv_validator_key.json. If this key is stolen, an attacker would be able to make your validator double sign, causing a slash of 5% of your LORE tokens and the tombstoning of your validator.
 
 ## Next Steps
 Wait for the next release for the `gitopiad` binary and be ready to come online at the recommended time.
