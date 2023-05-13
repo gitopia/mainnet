@@ -23,7 +23,7 @@
                     "key": "L5WvigKePCgitV0gudm3bsPZY2TjeWplIrjuviMU1kY="
                 },
                 "value": {
-                    "denom": "utlore",
+                    "denom": "ulore",
                     "amount": "4596623500"
                 }
             }
@@ -57,6 +57,6 @@
         "tip": null
     },
     "signatures": [
-        "4PhBR3hjYwlSnW4eMV6vS48oGMf1H+8F1tovr2pUVjd8Xy78zGOMO0eaIY2PPf4FknAGiixYMkr8DMxrpvW+yg=="
+        "n5XmKWwdR4HUM1Pd2Zn8heRubS2qyYU1KV9myg8lX6FXs2s4ElYzvpUMj5sAsfeML08XSj4KZccNprsIvuQxWg=="
     ]
 }
