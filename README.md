@@ -43,7 +43,8 @@ gitopiad gentx [key_name] [amount] \
   --commission-max-change-rate <commission_max_change_rate> \
   --moniker <moniker> \
   --website <website> \
-  --pubkey <consensus_pubkey>
+  --pubkey <consensus_pubkey> \
+  --chain-id gitopia
 ```
 
 This will produce a file in the `~/.gitopia/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
