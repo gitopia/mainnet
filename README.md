@@ -17,101 +17,30 @@ The first step is to install the Gitopia binary, `gitopiad`. Get the latest rele
 
 Once you have installed the Gitopia binary, you need to fork this repository and clone it to your local machine. The Gitopia genesis repository contains the initial configuration and parameters for the Gitopia blockchain.
 
-3. Extract the pre-genesis.json and verify the sha256 checksum (use shasum -a 256 or sha256sum)
+3. Extract the genesis.json and verify the sha256 checksum (use shasum -a 256 or sha256sum)
 
 ```bash
-❯ tar -xzf pre-genesis.tar.gz
-❯ shasum -a 256 pre-genesis.json
-9c44bd20094aa530edb19658efe019c29c7de175e59cf2a4b7ecc9e78e042963  pre-genesis.json
+❯ tar -xzf genesis.tar.gz
+❯ shasum -a 256 genesis.json
+0cf5c55e6ea1fbcebccadba0f6dc0b83ac76d1b608487a06978956404ce33e66  genesis.json
 ```
 
 4. Validate genesis file and create gentx transaction
 
-Copy the `pre-genesis.json` to gitopia home directory and verify the correctness of the configuration by running the following command:
+Copy the `genesis.json` to gitopia home directory and verify the correctness of the configuration by running the following command:
 
 ```bash
-cp pre-genesis.json ~/.gitopia/config/genesis.json
+cp genesis.json ~/.gitopia/config/genesis.json
 gitopiad validate-genesis
 ```
 
-Once you have verified the genesis file, you need to create a gentx transaction. A gentx transaction is a special type of transaction that allows you to become a validator on the Gitopia network. To create a gentx transaction, run the following command:
-
-```bash
-gitopiad gentx [key_name] [amount] \
-  --commission-rate <commission_rate> \
-  --commission-max-rate <commission_max_rate> \
-  --commission-max-change-rate <commission_max_change_rate> \
-  --moniker <moniker> \
-  --website <website> \
-  --pubkey <consensus_pubkey> \
-  --chain-id gitopia
-```
-
-This will produce a file in the `~/.gitopia/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
-
-```bash
-{
-  "type": "auth/StdTx",
-  "value": {
-    "msg": [
-      {
-        "type": "cosmos-sdk/MsgCreateValidator",
-        "value": {
-          "description": {
-            "moniker": "<moniker>",
-            "identity": "",
-            "website": "",
-            "details": ""
-          },
-          "commission": {
-            "rate": "<commission_rate>",
-            "max_rate": "<commission_max_rate>",
-            "max_change_rate": "<commission_max_change_rate>"
-          },
-          "min_self_delegation": "1",
-          "delegator_address": "cosmos1msz843gguwhqx804cdc97n22c4lllfkk39qlnc",
-          "validator_address": "cosmosvaloper1msz843gguwhqx804cdc97n22c4lllfkk5352lt",
-          "pubkey": "<consensus_pubkey>",
-          "value": {
-            "denom": "uatom",
-            "amount": "100000000000"
-          }
-        }
-      }
-    ],
-    "fee": {
-      "amount": null,
-      "gas": "200000"
-    },
-    "signatures": [
-      {
-        "pub_key": {
-          "type": "tendermint/PubKeySecp256k1",
-          "value": "AlT62zuYGlZGUG3Yv0RtIFoPTzVY4N+WEFmBvz1syjws"
-        },
-        "signature": ""
-      }
-    ],
-    "memo": ""
-  }
-}
-```
-
-5. Commit and push gentx transaction in the forked repo
-
-After creating your gentx transaction, you need to commit and push it to your forked Gitopia repository.
-
-6. Create a pull request (PR)
-
-The final step in the genesis event of Gitopia is to create a pull request (PR) to submit your gentx transaction to the Gitopia genesis repository. In the PR description, provide details about your validator and your gentx transaction. Once your PR is merged, your gentx transaction will be included in the Gitopia genesis file, and you will become a validator on the Gitopia network at genesis.
-
-Note that we'll accept PRs only from the known validators to ensure that 2/3 of the voting power is online at the time of genesis. Others are free to join as a validator once the chain is live.
+5. Start your validator!!
 
 ## A Note about your Validator Signing Key
 Your validator signing private key lives at ~/.gitopia/config/priv_validator_key.json. If this key is stolen, an attacker would be able to make your validator double sign, causing a slash of 5% of your LORE tokens and the tombstoning of your validator.
 
 ## Next Steps
-Wait for the next release for the `gitopiad` binary and be ready to come online at the recommended time.
+Use the v2.0.0 release for the `gitopiad` binary and be ready to come online before the genesis time (2023-05-17T17:05:17Z).
 
 At genesis time, the bonded Proof-of-Stake system will kick in to determine the initial validator set (max 100 validators) from the set of gentx transactions. More than 2/3 of the voting power of this set must be online and participating in consensus in order to create the first block and start the gitopia mainnet.
 
