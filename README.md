@@ -22,7 +22,7 @@ Once you have installed the Gitopia binary, you need to fork this repository and
 ```bash
 ❯ tar -xzf pre-genesis.tar.gz
 ❯ shasum -a 256 pre-genesis.json
-af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398  pre-genesis.json
+9c44bd20094aa530edb19658efe019c29c7de175e59cf2a4b7ecc9e78e042963  pre-genesis.json
 ```
 
 4. Validate genesis file and create gentx transaction
@@ -43,7 +43,8 @@ gitopiad gentx [key_name] [amount] \
   --commission-max-change-rate <commission_max_change_rate> \
   --moniker <moniker> \
   --website <website> \
-  --pubkey <consensus_pubkey>
+  --pubkey <consensus_pubkey> \
+  --chain-id gitopia
 ```
 
 This will produce a file in the `~/.gitopia/config/gentx/` folder that has a name with the format `gentx-<node_id>.json`. The content of the file should have a structure as follows:
