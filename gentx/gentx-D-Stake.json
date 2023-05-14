@@ -7,7 +7,7 @@
             "moniker": "D-Stake",
             "identity":"21A67C27F1A9CD69",
             "website":"https://d-stake.xyz",
-            "security_contact":"info@d-stake.xyz"
+            "security_contact":"info@d-stake.xyz",
             "details": "D-Stake is an experienced PoS validator."
         },
         "commission": {
